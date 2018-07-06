@@ -12,14 +12,24 @@
 
 <body>
     <div id="app">
+        <!-- TO access the data from vue instance -->
+        <input type="text" v-on:input="ChangeTitle">
         <p>{{ title }}</p>
     </div>
 </body>
 <script>
+    // To Initiate new vue instance
     new Vue({
+        // To select a element
         el: '#app',
+        // To add the data variable
         data: {
             title: 'Hello World!!'
+        },
+        methods: {
+            ChangeTitle: function (e) {
+                this.title = e.target.value;
+            }
         }
     });
 </script>
